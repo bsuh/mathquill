@@ -212,6 +212,21 @@ LatexCmds.fraction = P(MathCommand, function(_, _super) {
   };
 });
 
+var LongDivision =
+LatexCmds.longdiv = P(MathCommand, function(_, _super) {
+  _.ctrlSeq = '\\longdiv';
+  _.htmlTemplate =
+      '<span class="longdivision non-leaf">'
+  +     '<span class="quotient">&1</span>'
+  +     '<span class="longdivisionright non-leaf">'
+  +       '<span class="divisor">&0</span>'
+  +       '<span class="dividend">&2</span>'
+  +     '</span>'
+  +   '</span>'
+  ;
+  _.textTemplate = ['(', '/', ')'];
+});
+
 var LiveFraction =
 LatexCmds.over =
 CharCmds['/'] = P(Fraction, function(_, _super) {
