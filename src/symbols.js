@@ -26,7 +26,7 @@ var VanillaSymbol = P(Symbol, function(_, _super) {
   };
 });
 
-CharCmds[' '] = bind(VanillaSymbol, '\\:', ' ');
+LatexCmds.mediumspace = CharCmds[' '] = bind(VanillaSymbol, '\\mediumspace ', '&nbsp;');
 
 LatexCmds.prime = CharCmds["'"] = bind(VanillaSymbol, "'", '&prime;');
 

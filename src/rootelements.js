@@ -223,7 +223,6 @@ var RootMathBlock = P(MathBlock, function(_, _super) {
     // Tab or Esc -> go one block right if it exists, else escape right.
     case 'Esc':
     case 'Tab':
-    case 'Spacebar':
       var parent = this.cursor.parent;
       // cursor is in root editable, continue default
       if (parent === this.cursor.root) {
@@ -240,6 +239,9 @@ var RootMathBlock = P(MathBlock, function(_, _super) {
         this.cursor.insRightOf(parent.parent);
       }
       break;
+
+    case 'Spacebar':
+      return;
 
     // Shift-Tab -> go one block left if it exists, else escape left.
     case 'Shift-Tab':
